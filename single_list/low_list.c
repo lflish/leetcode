@@ -12,10 +12,7 @@ typedef struct list{
 /** Initialize your data structure here. */
 
 MyLinkedList* myLinkedListCreate() {
-    MyLinkedList *head = malloc(sizeof(MyLinkedList));
-    head->val = 0;
-    head->next = NULL;
-    return head;
+    return calloc(1, sizeof(MyLinkedList));
 }
 
 /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
@@ -33,7 +30,7 @@ int myLinkedListGet(MyLinkedList* obj, int index) {
 
 /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
 void myLinkedListAddAtHead(MyLinkedList* obj, int val) {
-    MyLinkedList *node = malloc(sizeof(MyLinkedList));
+    MyLinkedList *node = calloc(1, sizeof(MyLinkedList));
     node->val = val;
     node->next = obj->next;
     obj->next = node;
@@ -42,9 +39,8 @@ void myLinkedListAddAtHead(MyLinkedList* obj, int val) {
 
 /** Append a node of value val to the last element of the linked list. */
 void myLinkedListAddAtTail(MyLinkedList* obj, int val) {
-    MyLinkedList *node = malloc(sizeof(MyLinkedList));
+    MyLinkedList *node = calloc(1, sizeof(MyLinkedList));
     node->val = val;
-    node->next = NULL;
 
     while(obj->next != NULL)
         obj = obj->next;
@@ -55,27 +51,22 @@ void myLinkedListAddAtTail(MyLinkedList* obj, int val) {
 /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
 void myLinkedListAddAtIndex(MyLinkedList* obj, int index, int val) {
 
-    if(index < 0){
-        myLinkedListAddAtHead(obj, val);
-        return;
+    if(index <= 0){
+        return myLinkedListAddAtHead(obj, val);
     }
 
-    int i = 0;
+    int i = 1;
 
     // 0 1 2
-    for(; obj->next != NULL; obj = obj->next, i++){
+    for(obj = obj->next; obj != NULL; obj = obj->next, i++){
         if(i == index) {
-            MyLinkedList *new = malloc(sizeof(MyLinkedList));
+            MyLinkedList *new = calloc(1, sizeof(MyLinkedList));
             new->val = val;
             new->next = obj->next;
             obj->next = new;
             return;
         }
     }
-
-    if(i == index)
-        myLinkedListAddAtTail(obj, val);
-
     return;
 }
 
@@ -96,8 +87,10 @@ void myLinkedListDeleteAtIndex(MyLinkedList* obj, int index) {
 
 void myLinkedListFree(MyLinkedList* obj) {
 
+    MyLinkedList *tmp = NULL;
+
     while(obj != NULL){
-        MyLinkedList *tmp = obj;
+        tmp = obj;
         obj = obj->next;
         free(tmp);
     }
