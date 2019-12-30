@@ -2,66 +2,60 @@
 #include <stdio.h>
 #include <string.h>
 
-char* longestPalindrome(char* s) {
+char * longestPalindrome(char * s){
+    int max_i = 0;
+    int max_j = 0;
+    int max_len = 0;
+    char *buf = malloc(1024);
 
-        int max_i, max_j;
-        int tmp_i, tmp_j;
-        int max = 0;
-        int i;
-    
-        int len = strlen(s);    
+    memset(buf, 0, 1024);
+    int i = 0;
 
-        for(i = 0; i < len - 1; i++){
-                if(s[i] == s[i + 1]){
-                        tmp_i = i - 1;
-                        tmp_j = i + 2;
+    for(i; s[i] != '\0'; i++){
+        /* 1 */
+        if(s[i + 1 ] == '\0')
+            break;
 
-                        int tmp = 2;
+        if( s[i] == s[i + 1] ){
+            int t_i = i;
+            int t_j = i + 1;
+            for(; t_i >= 0 && s[t_j] != '\0'; t_i--, t_j++){
 
-                        for(; tmp_i > 0 && tmp_j < len - 1; tmp_i--, tmp_j++){
-                                if(s[tmp_i] != s[tmp_j])
-                                        break;
-                                tmp += 2;
-                        }   
+                if(s[t_i] != s[t_j])
+                    break;
 
-                        if(tmp > max){
-                                max_i = tmp_i + 1;
-                                max_j = tmp_j - 1;
-                                max = tmp;
-				printf("max_i = %d max = %d\n" ,max_i, max);
-                        }   
-                }   
+                int len = t_j - t_i;
+                if(len > max_len){
+                    max_i = t_i;
+                    max_j = t_j;
+                    max_len = len;
+                }
+            }
+        }
+        if(s[i + 2 ] == '\0')
+            break;
+        /* 2 */
+        if( s[ i ] == s[i + 2] ){
+            int t_i = i;
+            int t_j = i + 2;
+            for(; t_i >= 0 && s[t_j] != '\0'; t_i--, t_j++){
 
-                if(s[i] == s[i + 2]){
-                        tmp_i = i - 1;
-                        tmp_j = i + 3;
+                if(s[t_i] != s[t_j])
+                    break;
 
-                        int tmp = 3;
+                int len = t_j - t_i;
+                if(len > max_len){
+                    max_i = t_i;
+                    max_j = t_j;
+                    max_len = len;
+                }
+            }
+        }
+    }
+    memcpy(buf, &s[max_i], max_len + 1);
 
-                        for(; tmp_i > 0 && tmp_j < len - 1; tmp_i--, tmp_j++){
-                                if(s[tmp_i] != s[tmp_j])
-                                        break;
-                                tmp += 2;
-                        }   
-
-                        if(tmp > max){
-                                max = tmp;
-                                max_i = tmp_i + 1;
-                                max_j = tmp_j - 1;
-				printf("max_i = %d, max = %d\n" ,max_i, max);
-                        }   
-                }   
-        }   
-        printf("%d %d %d\n", max_i, max_j, max);
-    
-        char *p = malloc(1000);
-        memset(p, 0, 1000);
-    
-        memcpy(p, s + max_i, max );
-    
-        return p;
+    return buf;
 }
-
 int main()
 {
 	char s[] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
