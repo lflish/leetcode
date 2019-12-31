@@ -14,10 +14,18 @@ bool isPalindrome(int x){
 
     int tmp = x;
     int num = 0;
+    int j = 0;
 
-    for(; tmp > 0; tmp = tmp / 10){
+    while(tmp > 0) {
+
+        if(++j  == 9){
+            if(x % 10 > 2)
+                return false;
+        }
+
         num *= 10;
         num += tmp % 10;
+        tmp = tmp / 10
     }
 
     if(x == num)
