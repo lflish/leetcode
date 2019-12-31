@@ -25,7 +25,7 @@ bool isPalindrome(int x){
 
         num *= 10;
         num += tmp % 10;
-        tmp = tmp / 10
+        tmp = tmp / 10;
     }
 
     if(x == num)
