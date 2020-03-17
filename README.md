@@ -10,7 +10,7 @@ LeetCode
 |1309|[解码字母到整数映射](https://leetcode-cn.com/problems/decrypt-string-from-alphabet-to-integer-mapping/)| [C](./C/1309_DecryptStringFromAlphabetToIntegerMapping/DecryptStringFromAlphabetToIntegerMapping.c)|简单|null|
 |70|[爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)| [C](./C/70_Climbing_Stairs_0ms/ClimbingStairs.c)|简单|100Hot|
 |53|[最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)| [C](./C/53_MaximumSubarray/MaximumSubarray.c)|简单|100hot|
-|26|[删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)| [C](./C/26_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.c), [Go](./algorithms/golang/twoSum/twoSum.go)|简单|null|
+|26|[删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)| [C](./C/26_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.c)|简单|null|
 |21|[合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)| [C](./C/21_MergeTwoSortedLists/MergeTwoSortedLis.c)|简单|100hot|
 |20|[有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)| [C](./C/20_ValidParentheses_0m/ValidParntheses.c)|简单|100hot|
 |14|[最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/)| [C](./C/14_LongestCommonPrefix_0m)|简单|null|
