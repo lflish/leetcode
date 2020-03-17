@@ -7,8 +7,8 @@ LeetCode
 (Notes: "&hearts;" means you need to buy a book from Leetcode)
 
 
-| # | Title | Solution | Difficulty | Tag|
-
+| # | Title | Solution | Difficulty | Tag |
+|---| ----- | -------- | ---------- | --- |
 |1160|[拼写单词](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)| [C](./algorithms/cpp/twoSum/twoSum.cpp), [Go](./algorithms/golang/twoSum/twoSum.go)|简单|每日一练|
 |1309|[解码字母到整数映射](https://leetcode-cn.com/problems/decrypt-string-from-alphabet-to-integer-mapping/)| [C](./algorithms/cpp/twoSum/twoSum.cpp), [Go](./algorithms/golang/twoSum/twoSum.go)|简单|null|
 |70|[爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)| [C](./algorithms/cpp/twoSum/twoSum.cpp), [Go](./algorithms/golang/twoSum/twoSum.go)|简单|100Hot|
