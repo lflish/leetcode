@@ -21,30 +21,30 @@ One longest palindrome that can be built is "dccaccd", whose length is 7.
 */
 
 int longestPalindrome(char * s){
+    unsigned int buf[128] = {0};
 
-    unsigned char buf[128] = {0};
-
+    int i = 0;
     int sum = 0;
-    char k = 0;
 
-    while( (k = *s++) != '\0' ){
-        if(buf[k] == 1){
-            buf[k] = 0;
-            sum += 2;
-            continue;
-        }
-        buf[k] = 1;
-    }
+    //sort
+    while( (i = *s++) != '\0' )
+        buf[i] += 1;
 
     //calc
-    for(k = 0x41; k < 0x7a; k++){
-        if(buf[k] == 1) 
-            return sum + 1;
-        if(k == 0x5a)
-            k = 0x60;
-    }
+    int flag = 0;
+    while(i < 128){
+        if(buf[i] % 2 == 0) 
+            sum += buf[i];
+        else if(buf[i] - 1 > 0){
+            flag = 1;
+            sum += buf[i] - 1;
+        }
+        else if(flag == 0)
+            flag = 1;
 
-    return sum;
+        i++;
+    }
+    return flag + sum;
 }
 
 int main(){
