@@ -25,12 +25,14 @@ LeetCode
 
 
 ### leetcode 面试题
+
 | # | Title | Solution | Difficulty | Tag |
 |---| ----- | -------- | ---------- | --- |
 
 |40|[最小的K个数](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)| [C](./C/面试40_最小的K个数/TheMinKNums.c)|简单|每日一练|
 
 ### leetcode 链表
+
 | # | Title | Solution | Difficulty | Tag |
 |---| ----- | -------- | ---------- | --- |
 
