@@ -24,16 +24,14 @@ LeetCode
 |1309|[解码字母到整数映射](https://leetcode-cn.com/problems/decrypt-string-from-alphabet-to-integer-mapping/)| [C](./C/1309_DecryptStringFromAlphabetToIntegerMapping/DecryptStringFromAlphabetToIntegerMapping.c)|简单|null|
 
 
-### leetcode 面试题
+### leetcode 面试题   
 
 | # | Title | Solution | Difficulty | Tag |
 |---| ----- | -------- | ---------- | --- |
-
 |40|[最小的K个数](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)| [C](./C/面试40_最小的K个数/TheMinKNums.c)|简单|每日一练|
 
-### leetcode 链表
+### leetcode 链表   
 
 | # | Title | Solution | Difficulty | Tag |
 |---| ----- | -------- | ---------- | --- |
-
 |707|[设计链表](https://leetcode-cn.com/problems/design-linked-list/)| [C1](./C/SingleList/single_list.c) [C2](./C/SingleList/low_list.c)|简单|单链表|
