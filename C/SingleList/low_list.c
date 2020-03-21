@@ -3,6 +3,7 @@
 //  头指针跟节点使用相同结构
 //  优点:不用考虑头结点与节点的关系
 //
+#include <stdlib.h>
 
 typedef struct list{
     int val;
