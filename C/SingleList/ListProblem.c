@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct ListNode {
     int val;
@@ -38,6 +39,69 @@ struct ListNode* reverseList(struct ListNode* head){
 
     return head;
 }
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ * 输入: 1->2->6->3->4->5->6, val = 6
+ * 输出: 1->2->3->4->5
+ */
+struct ListNode* removeElements(struct ListNode* head, int val){
+
+    struct ListNode **cur = &head;
+
+    while(*cur != NULL ){
+        if((*cur)->val == val)
+            *cur = (*cur)->next;
+        else
+            cur = &(*cur)->next;
+    }
+    return head;
+}
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ * 输入: 1->2->3->4->5->NULL
+ * 输出: 1->3->5->2->4->NULL
+ */
+
+
+struct ListNode* oddEvenList(struct ListNode* head){
+
+    if(head == NULL || head->next == NULL)
+        return head;
+
+    struct ListNode *head1 = head;
+    struct ListNode *head2 = head->next;
+
+    struct ListNode *cur1 = head1;
+    struct ListNode *cur2 = head2;
+
+    struct ListNode *cur = head2->next;
+
+    int i = 1;
+
+    for(i = 1; cur != NULL; i++, cur = cur->next){
+    
+        if(i % 2 == 1)
+            cur1 = cur1->next = cur;
+        else
+            cur2 = cur2->next = cur;
+    }
+
+    cur2->next = NULL;
+    cur1->next = head2;
+
+    return head;
+}
+
 struct ListNode * ListInit(int val)
 {
     struct ListNode *node = malloc(sizeof(struct ListNode));
@@ -62,7 +126,8 @@ int main()
 
     for(; node != NULL; node = node->next) printf("%d ", node->val); printf("\n");
 
-    node = reverseList(head);
+    //node = reverseList(head);
+    node = removeElements(head, 10);
 
     for(; node != NULL; node = node->next) printf("%d ", node->val); printf("\n");
 }
