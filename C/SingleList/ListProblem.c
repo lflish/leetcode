@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 struct ListNode {
     int val;
@@ -101,6 +102,32 @@ struct ListNode* oddEvenList(struct ListNode* head){
 
     return head;
 }
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+bool isPalindrome(struct ListNode *head) {
+
+    int arr[1024] = {0};
+    int i, pos = 0;
+
+    struct ListNode *cur = head;
+
+    for(; cur != NULL; cur = cur->next, pos++)
+        arr[pos] = cur->val;
+
+    for(--pos; i <= pos; pos--, i++){
+       if(arr[i] == arr[pos]) 
+        continue;
+        return false;
+    }
+    return true;
+};
 
 struct ListNode * ListInit(int val)
 {
