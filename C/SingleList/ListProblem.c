@@ -7,6 +7,12 @@ struct ListNode {
     struct ListNode *next;
 };
 
+ struct Node {
+    int val;
+    struct Node *next;
+    struct Node *random;
+};
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -27,15 +33,17 @@ struct ListNode* reverseList(struct ListNode* head){
 
     struct ListNode *cur = head;
 
-    while(cur->next != NULL){
+    while(cur && cur->next != NULL){
         struct ListNode *tmp = cur->next;
         cur->next = tmp->next;
 
         tmp->next = head;
         head = tmp;
-
+        /*
         struct ListNode *node;
         for(node = head; node != NULL; node = node->next) printf("%d ", node->val); printf("\n");
+        */
+
     }
 
     return head;
@@ -102,6 +110,183 @@ struct ListNode* oddEvenList(struct ListNode* head){
 
     return head;
 }
+/**
+ * 合并链表 
+ * */
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
+
+    struct ListNode *head = NULL, *cur = NULL;
+    
+    cur = head = malloc(sizeof(struct  ListNode));
+
+    while(l1 != NULL && l2 != NULL){
+
+        if(l1->val < l2->val){
+            cur->next = l1;
+            l1 = l1->next;
+        }else{
+            cur->next = l2;
+            l2 = l2->next;
+        }
+
+        cur = cur->next;
+    }
+
+    if(l1 == NULL)
+        cur->next = l2;
+    else
+        cur->next = l1;
+
+    return head->next;
+}
+
+struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
+
+    struct ListNode *head = malloc(sizeof(struct ListNode));
+    struct ListNode *cur = head;
+
+    int flag = 0;
+
+    while( l1 != NULL && l2 != NULL){
+        struct ListNode *node = malloc(sizeof(struct ListNode));
+
+        int v = l1->val + l2->val + flag;
+
+        if(v >= 10){
+            node->val = v - 10;
+            flag = 1;
+        }else{
+            node->val = v;
+            flag = 0;
+        }
+
+        node->next = NULL;
+        cur->next = node;
+        cur = cur->next;
+
+        l1 = l1->next;
+        l2 = l2->next;
+    }
+    
+    if(l1 == NULL)
+        l1 = l2;
+    else
+        l2 = l1;
+
+    while( flag && l1 != NULL){
+
+        int v = l1->val + flag;
+
+        if(v >= 10){
+            l1->val = 0;
+            flag = 1;
+            if(l1->next == NULL){
+                l1->next = malloc(sizeof(struct ListNode));
+                l1->next->next = NULL;
+                l1->next->val = 1;
+                flag = 0;
+                break;
+            }
+        }else{
+            l1->val = v;
+            flag = 0;
+            break;
+        }
+        l1 = l1->next;
+    }
+    if(flag){
+        cur->next = malloc(sizeof(struct ListNode));
+        cur->next->next = NULL;
+        cur->next->val = 1;
+    }else
+        cur->next = l2;
+
+    return head->next;
+}
+
+struct ListNode* rotateRight(struct ListNode* head, int k){
+
+    struct ListNode *cur = head;
+    int len = 0;
+    int i = 0, num = 0;
+
+    if(head == NULL)
+        return head;
+
+    while(cur != NULL){
+        len++;
+        cur = cur->next;
+    } 
+
+    k = k % len;
+
+    if(k == 0)
+        return head;
+
+    num = len - k;
+
+    for(i = 0, cur = head; i < num - 1; i++, cur = cur->next);
+    
+    struct ListNode *new_head = cur->next;
+    cur->next = NULL;
+    cur = new_head;
+
+    while(cur && cur->next != NULL)
+        cur = cur->next;
+
+    cur->next = head;
+
+    return new_head;
+}
+/**
+ * Definition for a Node.
+ * struct Node {
+ *     int val;
+ *     struct TreeNode *next;
+ *     struct TreeNode *random;
+ * };
+ */
+
+struct Node* copyRandomList(struct Node* head) {
+
+    if(head == NULL)
+        return NULL;
+
+    struct Node *nhead = malloc(sizeof(struct Node));
+
+    struct Node *ncur = nhead;
+    struct Node *cur = head;
+
+    // copy
+    while(cur != NULL){
+        struct Node *node = malloc(sizeof(struct Node));
+        node->next = NULL;
+        node->random = NULL;
+        node->val = cur->val;
+
+        ncur = (ncur->next = node);
+        cur = cur->next;
+    }
+
+    // deep copy
+    for(cur = head, ncur = nhead->next; cur != NULL; cur = cur->next, ncur = ncur->next){
+
+        if(cur->random == NULL)
+            continue;
+
+        struct Node *i = NULL;
+        struct Node *j = NULL;
+
+        for(i = head, j = nhead->next; i != NULL; i = i->next, j = j->next)
+            if(cur->random == i){
+                ncur->random = j;
+                break;
+            }
+    }
+
+    return nhead->next;
+}
+
 
 /**
  * Definition for singly-linked list.

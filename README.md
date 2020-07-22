@@ -39,3 +39,5 @@ LeetCode
 | # | Title | Solution | Difficulty | Tag |
 |---| ----- | -------- | ---------- | --- |
 |707|[设计链表](https://leetcode-cn.com/problems/design-linked-list/)| [C1](./C/SingleList/single_list.c) [C2](./C/SingleList/low_list.c)|简单|单链表|
+
+链表集合(./C/SingleList/)
