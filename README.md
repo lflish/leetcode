@@ -5,7 +5,7 @@ LeetCode
 
 | # | Title | Solution | Difficulty | Tag |
 |---| ----- | -------- | ---------- | --- |
-|1|[两数之和](https://leetcode.com/problems/two-sum/)| [C](./C/01_TwoSum/twosum.c), [Python](./Python/01_TwoSum/twosum.py) [Go](./Go/01TwoSum/twosum.go) |简单|100hot|
+|1|[两数之和](https://leetcode.com/problems/two-sum/)| [C](./C/01_TwoSum/twosum.c), [Python](./Python/01_TwoSum/twosum.py),[Go](./Go/01TwoSum/twosum.go) |简单|100hot|
 |5|[最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)| [C](./C/05_LongestPalindromicSubstring/LongestPalindromicSubstring.c)|中等|null|
 |9|[回文数](https://leetcode-cn.com/problems/palindrome-number/)| [C](./C/09_PalindromeNumber/PalindromeNumber.c)|简单|null|
 |11|[盛水最多的容器](https://leetcode-cn.com/problems/container-with-most-water/)| [C](./C/11_ContainerWithMostWater/ContainerWithMostWater.c)|简单|100hot|
