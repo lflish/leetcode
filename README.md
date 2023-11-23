@@ -17,6 +17,8 @@ LeetCode
 |26|[删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)| [C](./C/26_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.c)|简单|null|
 |53|[最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)| [C](./C/53_MaximumSubarray/MaximumSubarray.c)|简单|100hot|
 |70|[爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)| [C](./C/70_Climbing_Stairs_0ms/ClimbingStairs.c)|简单|100Hot|
+|121|[买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)| [C](./C/BestTimetoBuyandSellStock.c)|简单|100hot,贪心算法|
+|169|[多数元素](https://leetcode.cn/problems/majority-element/)| [C](./C/169_MajorityElement/MajorityElement.c)|简单|100hot|
 |190|[颠倒二进制](https://leetcode-cn.com/problems/reverse-bits/)| [C](./C/190_ReverseBits/ReverseBits.c)|简单|每日一练|
 |365|[水壶问题](https://leetcode-cn.com/problems/water-and-jug-problem/)| [C](./C/365_WaterAndJugProblem/WaterAndJugProblem.c)|中等|每日一练|
 |409|[最长回文串](https://leetcode-cn.com/problems/longest-palindrome/)| [C](./C/409_LongestPalindrome/LongestPalindrome.c)|简单|每日一练|
