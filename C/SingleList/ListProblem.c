@@ -49,6 +49,26 @@ struct ListNode* reverseList(struct ListNode* head){
     return head;
 }
 
+struct ListNode* reverseList(struct ListNode* head){
+
+    struct ListNode *cur = head;
+    head = NULL;
+
+    while(cur){
+        struct ListNode *tmp = cur->next;
+        cur->next = head;
+
+        head = cur;
+        cur = tmp;
+    }
+
+    return head;
+}
+
+struct ListNode* reverseList(struct ListNode* head){
+    return head;
+}
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
