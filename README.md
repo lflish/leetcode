@@ -1,5 +1,5 @@
 LeetCode
-========
+
 
 ## LeetCode 算法
 
@@ -15,12 +15,17 @@ LeetCode
 |20|[有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)| [C](./C/20_ValidParentheses_0m/ValidParntheses.c)|简单|100hot|
 |21|[合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)| [C](./C/21_MergeTwoSortedLists/MergeTwoSortedLis.c)|简单|100hot|
 |26|[删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)| [C](./C/26_RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.c)|简单|null|
+|31|[下一个排列](https://leetcode.cn/problems/next-permutation/description/)| [C](./C/31_Next_List/nextList.c)|中等|双指针|
 |53|[最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)| [C](./C/53_MaximumSubarray/MaximumSubarray.c)|简单|100hot|
 |55|[跳跃游戏](https://leetcode.cn/problems/jump-game/description/| [C](./C/55_Jump_Game/JumpGame.c)|简单|100hot|
 |70|[爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)| [C](./C/70_Climbing_Stairs_0ms/ClimbingStairs.c)|简单|100Hot|
+|118|[杨辉三角](https://leetcode.cn/problems/pascals-triangle/description/)| [C](./C/118_yanghui/yanghui.c)|简单|100hot,数组|
 |121|[买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)| [C](./C/121_Best_Time_to_Buy_and_Sell_Stock/BestTimetoBuyandSellStock.c)|简单|100hot,贪心算法|
+|128|[最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/| [C](./C/128_Longest_Consecutive_Sequence/LongestConsecutiveSequence.c)|中等|100hot,贪心算法|
 |169|[多数元素](https://leetcode.cn/problems/majority-element/)| [C](./C/169_MajorityElement/MajorityElement.c)|简单|100hot|
 |190|[颠倒二进制](https://leetcode-cn.com/problems/reverse-bits/)| [C](./C/190_ReverseBits/ReverseBits.c)|简单|每日一练|
+|200|[岛屿数量](https://leetcode.cn/problems/number-of-islands/)| [C](./C/200_Number_of_IsLands/NumberofIsLands.c)|中等|每日一练,深度优先|
+|215|[数组中的第K个最大元素](https://leetcode.cn/problems/kth-largest-element-in-an-array/)| [C](./C/215_Kth_Largest_Element_in_an_Array/KthLargestElementinanArray.c)|中等|排序|
 |365|[水壶问题](https://leetcode-cn.com/problems/water-and-jug-problem/)| [C](./C/365_WaterAndJugProblem/WaterAndJugProblem.c)|中等|每日一练|
 |409|[最长回文串](https://leetcode-cn.com/problems/longest-palindrome/)| [C](./C/409_LongestPalindrome/LongestPalindrome.c)|简单|每日一练|
 |836|[矩形叠加](https://leetcode-cn.com/problems/rectangle-overlap/)| [C](./C/836_RectangleOverlap)|简单|每日一练|
